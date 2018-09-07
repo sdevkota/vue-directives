@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue JS-Vue Directives</title>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <a href="#home" class="active">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div id="app">
+        <div :style="{fontSize:fontSize+'em'}">
+
+                <h1 v-once style="display: inline;">{{title}}</h1>
+                <span>--Created using v-once</span>
+                <div>
+                    <br>
+                    <a v-bind:href="link" target="_blank">Browse vue Directives</a> --All the directives
+                </div>
+                <br>
+                <div v-html="linkHTML" style="display: inline;">
+                </div>
+                <span>--Created using v-html</span>
+                <br>
+                <h1 v-bind:class="{isError:isError}" >{{changeTitle()}}</h1>
+                <h1 v-if="show">Show this</h1>
+                <h1 v-if="!show">Hide this</h1>
+                <div v-pre>V-Pre</div>
+            <button v-on:click="increaseFont()">Increase font by em</button>
+            <button v-on:click="decreaseFont()">Decrease font by em</button>
+            <button v-on:click="toggleClass()">Toggle Class of a paragraph</button>
+        </div>
+       
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
